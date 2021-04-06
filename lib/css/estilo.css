@@ -1,0 +1,440 @@
+@charset "utf-8";
+
+*::-webkit-scrollbar {
+    width: 5px;    
+}
+*::-webkit-scrollbar-thumb {
+    background: rgba(149,149,149,0.8);
+}
+*::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(149,149,149,0.4);
+}
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    background: url(../img/background.jpg) no-repeat center center fixed;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+    z-index: 9;
+
+}
+header.scroll {
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+header div.center {
+    padding: 15px 1%;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+header div.center h1 {
+    cursor: pointer;
+    margin: 4px 0px;
+    display: inline-block;
+    width: 72px;
+    height: 50px;
+    background: url(../img/logo-oficial.png) no-repeat center center;
+    background-size: 100% auto;
+    color: rgba(0,0,0,0);
+    transition-duration: 0.1s;
+}
+header.scroll div.center h1 {
+    background: url(../img/logo-oficial-footer.png) no-repeat center center;
+    background-size: 100% auto;
+}
+@media screen and (max-width:800px) {
+    header div.center, header.scroll div.center {
+        justify-content: center;
+    }
+    header div.center h1, header.scroll div.center h1 {
+        width: 30%;
+        background-size: auto 100%;
+        background-position: center;
+    }
+}
+header div.center nav .nav-icon {
+    display: none;
+    width: 40px;
+    height: 24px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+header div.center nav .nav-icon span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 50%;
+    background: #00135b;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+header.scroll div.center nav .nav-icon span {
+    background: #fff;
+}
+header div.center nav .nav-icon span:nth-child(even) {
+    left: 50%;
+}
+header div.center nav .nav-icon span:nth-child(odd) {
+    left:0px;
+
+}
+header div.center nav .nav-icon span:nth-child(1), header div.center nav .nav-icon span:nth-child(2) {
+    top: 0px;
+}
+header div.center nav .nav-icon span:nth-child(3), header div.center nav .nav-icon span:nth-child(4) {
+    top: 10px;
+}
+header div.center nav .nav-icon span:nth-child(5), header div.center nav .nav-icon span:nth-child(6) {
+    top: 20px;
+}
+header div.center nav .nav-icon.open span:nth-child(1),header div.center nav .nav-icon.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+header div.center nav .nav-icon.open span:nth-child(2),header div.center nav .nav-icon.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+header div.center nav .nav-icon.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+}
+header div.center nav .nav-icon.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+}
+header div.center nav .nav-icon.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+}
+header div.center nav .nav-icon.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+}
+header div.center nav .nav-icon.open span:nth-child(5) {
+    left: 5px;
+    top: 17px;
+}
+header div.center nav .nav-icon.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 17px;
+}
+header div.center nav ul {
+    display: flex;
+}
+header div.center nav ul li {
+    margin: 0 20px;
+    color: #00135b;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 0;
+    transition-duration: 0.3s;
+    background: rgba(0,0,0,0);
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 1%,rgba(0,0,0,0) 66%,rgba(0,0,0,0) 88%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0) 1%,rgba(0,0,0,0) 66%,rgba(0,0,0,0) 88%,rgba(0,0,0,0) 100%);
+    background-size: 30px 4px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+header.scroll div.center nav ul li {
+    color: #fff;
+}
+header div.center nav ul li:hover {
+    background: #FFFFFF;
+    background: -webkit-linear-gradient(left, #00135b 1%,#00135b 66%,#00135b 88%,#00135b 100%);
+    background: linear-gradient(to right, #00135b 1%,#00135b 66%,#00135b 88%,#00135b 100%);
+    background-size: 30px 4px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+header.scroll div.center nav ul li:hover {
+    background: #FFFFFF;
+    background: -webkit-linear-gradient(left, #FFFFFF 1%,#FFFFFF 66%,#FFFFFF 88%,#FFFFFF 100%);
+    background: linear-gradient(to right, #FFFFFF 1%,#FFFFFF 66%,#FFFFFF 88%,#FFFFFF 100%);
+    background-size: 30px 4px;
+    background-repeat: no-repeat;
+    background-position: center bottom;;
+}
+@media screen and (max-width:800px) {
+    header div.center nav ul {
+        display: none;
+    }
+    header div.center nav .nav-icon {
+        display: block;
+    }
+}
+
+section {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: inline-grid;
+    background: rgba(255,255,255,0);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+}
+section article {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 2%;
+    overflow: hidden;
+}
+
+section article.title {
+    display: flex;
+    max-width: 98%;
+    text-align: center;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+section article.title .content {
+    width: 100%;
+}
+section article.title .content h2 {
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 5px 10px #000;
+    transition-duration: 0.3s;
+}
+section article.title .content p {
+    text-shadow: 0 2px 3px #000;
+    font-size: 30px;
+    font-style: italic;
+    transition-duration: 0.3s;
+}
+@media screen and (max-width:800px) {
+    section article.title .content h2 {
+        font-size: 40px;
+    }
+    section article.title .content p {
+        font-size: 16px;
+    }
+}
+section article.title .content i.scroll-down {
+    background: url(../img/seta-down.png) no-repeat;
+    background-size: 100% 100%;
+    width: 23px;
+    height: 13px;
+    margin: 10px;
+    cursor: pointer;
+    display: -webkit-inline-box;
+}
+
+section article.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 2%;
+}
+section article.intro .content {
+    margin: 0 auto;
+    max-width: 900px;
+    width: 100%;
+}
+section article.intro .content h3 {
+    font-size: 40px;
+    padding: 0 0 30px;
+    margin: 0 0 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #002784;
+    text-align: center;
+    background: rgb(0,39,132);
+    background: -webkit-linear-gradient(left, rgba(0,39,132,1) 1%,rgba(0,39,132,1) 66%,rgba(0,39,132,1) 88%,rgba(0,39,132,1) 100%);
+    background: linear-gradient(to right, rgba(0,39,132,1) 1%,rgba(0,39,132,1) 66%,rgba(0,39,132,1) 88%,rgba(0,39,132,1) 100%);
+    background-size: 50px 8px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+section article.intro .content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+section article.intro .content p a {
+    transition-duration: 0.3s;
+    text-decoration: underline;
+    color: #002784;
+}
+section article.intro .content p a:hover {
+    opacity: 0.7;
+}
+section article.intro .content ul {
+    margin: 0 auto;
+    text-align: center;
+}
+section article.intro .content ul li {
+    display: inline-block;
+    vertical-align: top;
+    width: 150px;
+    margin: 20px 5%;
+    text-align: center;
+}
+@media screen and (max-width:800px) {
+    section article.intro .content ul li {
+        display: block;
+        width: 90%;
+    }
+}
+section article.intro .content ul li img {
+    display: -webkit-box;
+    margin: 10px auto;
+    max-width: 100%;
+}
+section article.intro .content ul li h4 {
+    color: #002784;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    margin: 0 0 10px;
+}
+section article.intro .content ul li p {
+    color: #666;
+    font-size: 12px;
+}
+section article.intro .content form div.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+}
+section article.intro .content form div.grid div {
+    padding: 0 5px;
+}
+section article.intro .content form div.grid div.full {
+    grid-area: 1 span / 2 span;
+}
+section article.intro .content form div.grid div label input[type="text"] {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+section article.intro .content form div.grid div label textarea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0 0 20px;
+}
+section article.intro .content form input[type="button"] {
+    width: 200px;
+    height: 40px;
+    border: 1px solid #002784;
+    color: #002784;
+    padding: 5px;
+    margin: 0 5px 20px;
+    text-transform: uppercase;
+    background: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    transition-duration: 0.3s;
+}
+section article.intro .content form input[type="button"]:hover {
+    background: #002784;
+    color: #fff;
+}
+section article.intro .content form span {
+    display: none;
+}
+section#home {
+    height: 100vh;
+}
+
+section#servicos {
+    background: url(../img/background2.jpg) no-repeat center center fixed;
+}
+@media screen and (max-width:850px) {
+    section#servicos {
+
+    }
+}
+
+section#sobre {
+    background: url(../img/background3.jpg) no-repeat center center fixed;
+}
+@media screen and (max-width:850px) {
+    section#sobre {
+
+    }
+}
+
+section#contato {
+    background: url(../img/background4.jpg) no-repeat center center fixed;
+}
+section#contato article.intro {
+    padding: 100px 2% 20px;
+}
+@media screen and (max-width:850px) {
+    section#sobre {
+
+    }
+}
+
+footer {
+    border-top: 1px solid #ebebeb;
+    position: relative;
+    background: #f7f7f7;
+    text-align: center;
+    padding: 20px 0;
+}
+footer p {
+    margin: 10px 0 0 0;
+    color: #999;
+}
+footer p.copy {
+    font-size: 12px;
+}
+footer ol li {
+    display: inline-block;
+    vertical-align: middle;
+    transition-duration: 0.3s;
+}
+footer ol li:hover {
+    opacity: 0.7;
+}
